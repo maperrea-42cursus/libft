@@ -6,22 +6,22 @@
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 14:42:33 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/06 16:15:10 by maperrea         ###   ########.fr       */
+/*   Updated: 2020/01/07 15:39:14 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *ptr;
-	size_t i;
+	unsigned char	*ptr;
+	size_t			i;
 
 	ptr = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{
 		ptr[i] = 0;
-		i++;	
+		i++;
 	}
 }
