@@ -6,7 +6,7 @@
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 15:46:08 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/07 19:18:27 by maperrea         ###   ########.fr       */
+/*   Updated: 2020/01/08 10:47:13 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t i;
 
 	i = 0;
-	if (size == 0 || dst == NULL || src == NULL)
+	if (dst == NULL || src == NULL)
+		return (0);
+	if (size == 0)
 		return (ft_strlen(src));
 	while (i < size - 1 && src[i])
 	{

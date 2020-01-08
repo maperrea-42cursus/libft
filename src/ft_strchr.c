@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/07 15:17:38 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/08 10:46:00 by maperrea         ###   ########.fr       */
+/*   Created: 2020/01/08 10:47:28 by maperrea          #+#    #+#             */
+/*   Updated: 2020/01/08 10:57:20 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t i;
+	int i;
 
 	i = 0;
+	if ((char)c == 0)
+		return ((char *)&(s[ft_strlen(s)]));
 	while (s[i])
+	{
+		if (s[i] == (char) c)
+			return ((char *)&(s[i]));
 		i++;
-	return (i);
+	}
+	return (NULL);
 }

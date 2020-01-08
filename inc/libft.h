@@ -6,7 +6,7 @@
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 14:08:32 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/07 18:18:19 by maperrea         ###   ########.fr       */
+/*   Updated: 2020/01/08 14:16:00 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isascii(int c);
 int		ft_isalnum(int c);
-
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 
 #endif
