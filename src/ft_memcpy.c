@@ -6,7 +6,7 @@
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 15:28:25 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/08 12:15:40 by maperrea         ###   ########.fr       */
+/*   Updated: 2020/01/09 16:02:40 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, void *src, size_t n)
 	i = 0;
 	if (!dst && !src)
 		return (dst);
-	while (i < n && ((unsigned char *)src)[i])
+	while (i < n)
 	{
 		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 		i++;

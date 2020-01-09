@@ -6,7 +6,7 @@
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:47:28 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/08 10:57:20 by maperrea         ###   ########.fr       */
+/*   Updated: 2020/01/09 16:11:37 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&(s[ft_strlen(s)]));
 	while (s[i])
 	{
-		if (s[i] == (char) c)
+		if (s[i] == (char)c)
 			return ((char *)&(s[i]));
 		i++;
 	}

@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 10:57:33 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/09 16:12:46 by maperrea         ###   ########.fr       */
+/*   Created: 2020/01/09 13:36:16 by maperrea          #+#    #+#             */
+/*   Updated: 2020/01/09 13:41:41 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strdup(const char *str)
 {
-	int i;
+	char	*dup;
 
-	i = ft_strlen(s);
-	if ((char)c == 0)
-		return ((char *)&(s[ft_strlen(s)]));
-	while (i >= 0)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&(s[i]));
-		i--;
-	}
-	return (NULL);
+	if (!(dup = malloc(sizeof(char) * (ft_strlen(str) + 1))))
+		return (NULL);
+	(void)ft_strlcpy(dup, str, ft_strlen(str) + 1);
+	return (dup);
 }

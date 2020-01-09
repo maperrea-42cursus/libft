@@ -6,23 +6,30 @@
 #    By: maperrea <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/07 10:56:01 by maperrea          #+#    #+#              #
-#    Updated: 2020/01/07 18:24:41 by maperrea         ###   ########.fr        #
+#    Updated: 2020/01/09 19:44:59 by maperrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-vpath %.h include
+vpath %.h inc
 vpath %.c src
+vpath %.c bonus
 vpath %.o obj
 
 NAME		= libft.a
 
-SRCS		= $(notdir $(shell find ${SRCDIR}/*.c))
-
 SRCDIR		= src
 
-OBJS		= ${SRCS:.c=.o}
-	
+SRCS		= $(notdir $(shell find ${SRCDIR}/*.c))
+
+BONUSDIR	= bonus
+
+BONUS		= $(notdir $(shell find ${BONUSDIR}/*.c))
+
 OBJDIR		= obj
+	
+OBJS		= ${SRCS:.c=.o}
+
+BONUSOBJS	= ${BONUS:.c=.o}
 
 INCDIR		= inc
 
@@ -40,8 +47,11 @@ ${NAME}:	${OBJS}
 
 all:		${NAME}
 
+bonus:		${OBJS} ${BONUSOBJS}
+			ar rc ${NAME} $(addprefix ${OBJDIR}/,${OBJS} ${BONUSOBJS})
+
 clean:
-			${RM} $(addprefix ${OBJDIR}/,${OBJS})
+			${RM} $(addprefix ${OBJDIR}/,${OBJS} ${BONUSOBJS})
 
 fclean:		clean
 			${RM} ${NAME}

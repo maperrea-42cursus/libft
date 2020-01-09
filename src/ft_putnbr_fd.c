@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 10:57:33 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/09 16:12:46 by maperrea         ###   ########.fr       */
+/*   Created: 2020/01/09 18:27:59 by maperrea          #+#    #+#             */
+/*   Updated: 2020/01/09 18:41:06 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putnbr_fd(int nbr, int fd)
 {
-	int i;
+	long n;
+	char c;
 
-	i = ft_strlen(s);
-	if ((char)c == 0)
-		return ((char *)&(s[ft_strlen(s)]));
-	while (i >= 0)
+	n = nbr;
+	if (n < 0)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&(s[i]));
-		i--;
+		write(fd, "-", 1);
+		n = -n;
 	}
-	return (NULL);
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		c = (n % 10) + 48;
+	}
+	else
+		c = n + 48;
+	write(fd, &c, 1);
+	return ;
 }

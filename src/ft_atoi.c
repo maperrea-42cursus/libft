@@ -6,7 +6,7 @@
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 13:31:40 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/08 14:15:43 by maperrea         ###   ########.fr       */
+/*   Updated: 2020/01/09 16:18:49 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ static int	atoi_len(const char *str)
 	return (i);
 }
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
-	unsigned long result;
-	int neg;
-	int i;
+	unsigned long	result;
+	int				neg;
+	int				i;
 
 	result = 0;
 	i = 0;
