@@ -40,6 +40,7 @@ RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror
 
 .c.o:
+			$(shell mkdir -p ${OBJDIR})
 			${CC} ${CFLAGS} -I${INCDIR} -c $^ -o ${OBJDIR}/$@
 
 ${NAME}:	${OBJS}
@@ -51,7 +52,9 @@ bonus:		${OBJS} ${BONUSOBJS}
 			ar rc ${NAME} $(addprefix ${OBJDIR}/,${OBJS} ${BONUSOBJS})
 
 clean:
-			${RM} $(addprefix ${OBJDIR}/,${OBJS} ${BONUSOBJS})
+			${RM} -r ${OBJDIR}
+#			${RM} $(addprefix ${OBJDIR}/,${OBJS} ${BONUSOBJS})
+#			$(shell rmdir --ignore-fail-on-non-empty obj)
 
 fclean:		clean
 			${RM} ${NAME}
