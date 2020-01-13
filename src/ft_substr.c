@@ -6,7 +6,7 @@
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 13:56:28 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/09 16:13:16 by maperrea         ###   ########.fr       */
+/*   Updated: 2020/01/11 10:39:01 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_calloc(1, 1));
 	l = ft_strlen(&(s[start])) < len ? ft_strlen(&(s[start])) : len;
 	if (!(sub = malloc(sizeof(char) * (l + 1))))
 		return (NULL);

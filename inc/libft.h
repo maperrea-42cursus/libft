@@ -6,7 +6,7 @@
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 14:08:32 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/09 20:17:42 by maperrea         ###   ########.fr       */
+/*   Updated: 2020/01/11 11:22:07 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,6 @@ void			ft_lstdelone(t_list *list, void (*del)(void *));
 void			ft_lstclear(t_list **list, void (*del)(void *));
 void			ft_lstiter(t_list *list, void (*f)(void *));
 t_list			*ft_lstmap(t_list *list,
-		void *(*f)(void *), void (*del)(void *));
+							void *(*f)(void *), void (*del)(void *));
 
 #endif

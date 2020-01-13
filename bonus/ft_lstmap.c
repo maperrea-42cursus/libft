@@ -6,7 +6,7 @@
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 19:52:21 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/09 20:31:18 by maperrea         ###   ########.fr       */
+/*   Updated: 2020/01/11 10:55:04 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 t_list	*ft_lstmap(t_list *list, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*map;
+	t_list	*new;
 
 	map = NULL;
-	(void)del;
 	while (list && list->content)
 	{
-		ft_lstadd_back(&map, ft_lstnew((*f)(list->content)));
+		if (!(new = ft_lstnew((*f)(list->content))))
+		{
+			ft_lstclear(&map, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&map, new);
 		list = list->next;
 	}
 	return (map);

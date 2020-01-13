@@ -6,7 +6,7 @@
 /*   By: maperrea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 17:17:24 by maperrea          #+#    #+#             */
-/*   Updated: 2020/01/09 17:26:27 by maperrea         ###   ########.fr       */
+/*   Updated: 2020/01/11 10:36:32 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t			len;
 	char			*str;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
